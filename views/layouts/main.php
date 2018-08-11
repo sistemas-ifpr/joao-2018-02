@@ -36,6 +36,20 @@ AppAsset::register($this);
         ],
     ]);
     echo Nav::widget([
+        'options' => ['class' => 'nav navbar-nav navbar-left'],
+        'items' => [
+            [
+            'label'=> 'Manutenção',
+            'items' => [
+                ['label' => 'Usuários', 'url' => ['/usuario/index']],
+                '<li class="divider"></li>',
+                ['label' => 'Local', 'url' => ['/local/index']],
+                ['label' => 'Recursos', 'url' => ['/recurso/index']],
+            ],
+        ],
+        ],
+    ]);
+    echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Início', 'url' => ['/site/index']],
