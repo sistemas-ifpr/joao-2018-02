@@ -14,18 +14,18 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Usuario', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Novo', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'nome',
-            'email:email',
-            'senha',
+            'email:text',
+            [
+                'attribute' => 'senha',
+                'visible' => \Yii::$app->user->identity->isAdmin(),
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

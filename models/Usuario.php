@@ -71,6 +71,15 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return $this->nome;
     }
 
+    public function isAdmin()
+    {
+        if($this->email === "joao@joao.joao"){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     /**
      * @param string $authKey
      * @return bool se a chave de autenticação do usuário atual for válida
