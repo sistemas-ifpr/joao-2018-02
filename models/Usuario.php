@@ -68,7 +68,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      */
     public function getAuthKey()
     {
-        return $this->nome;
+        return $this->email;
     }
 
     public function isAdmin()
@@ -86,7 +86,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      */
     public function validateAuthKey($authKey)
     {
-        return $this->getAuthKey() === $nome;
+        return $this->getAuthKey() === $authKey;
     }
 
     /**
